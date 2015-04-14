@@ -1,7 +1,7 @@
 FROM debian:wheezy
 
 RUN apt-get update -y
-RUN apt-get install -y git curl python g++ make
+RUN apt-get install -y curl python g++ make
 
 RUN curl -sL https://deb.nodesource.com/setup_0.12 > nodesetup_0.12
 RUN bash -c "source nodesetup_0.12"
