@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian:wheezy
 
 RUN apt-get update -y
 RUN apt-get install -y git curl python g++ make
