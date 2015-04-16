@@ -1,12 +1,16 @@
-FROM debian:wheezy
+FROM oraclelinux:6.6 
 
-RUN apt-get update -y
-RUN apt-get install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash -
-RUN apt-get install -y nodejs
-RUN npm update -g npm@2.7.0
+# install nodejs
+RUN cd /usr/local
+RUN wget http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz
+RUN tar --strip-components 1 -xzf node-v0.12.2-linux-x64.tar.gz
+RUN rm node-v0.12.2-linux-x64.tar.gz
 RUN npm install pm2@0.12.5 -g --unsafe-perm
 
-RUN apt-get install -y nginx
+# install nginx
+RUN rpm -ivh http://nginx.org/packages/rhel/6/noarch/RPMS/nginx-release-rhel-6-0.el6.ngx.noarch.rpm
+RUN yum install -y nginx
+RUN mkdir -p /etc/nginx/sites-available
+RUN mkdir -p /etc/nginx/sites-enabled
 RUN mkdir /var/cache/nginx
 RUN service nginx stop
