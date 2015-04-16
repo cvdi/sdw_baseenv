@@ -13,5 +13,3 @@ RUN rpm -ivh http://nginx.org/packages/rhel/6/noarch/RPMS/nginx-release-rhel-6-0
 RUN yum install -y nginx
 RUN mkdir -p /etc/nginx/sites-available
 RUN mkdir -p /etc/nginx/sites-enabled
-RUN mkdir /var/cache/nginx
-RUN service nginx stop
