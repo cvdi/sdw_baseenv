@@ -1,6 +1,7 @@
 FROM oraclelinux:6.6 
 
 # install nodejs
+RUN yum install -y tar
 RUN cd /usr/local
 RUN curl http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz > node-v0.12.2-linux-x64.tar.gz
 RUN tar --strip-components 1 -xzf node-v0.12.2-linux-x64.tar.gz
