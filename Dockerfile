@@ -11,4 +11,5 @@ RUN npm install pm2@0.12.5 -g --unsafe-perm
 # install nginx
 RUN apt-get install -y nginx
 RUN mkdir /var/cache/nginx
+RUN mkdir /tmp/nginx
 RUN service nginx stop
