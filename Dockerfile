@@ -16,4 +16,6 @@ RUN curl http://www.dotdeb.org/dotdeb.gpg > dotdeb.gpg && \
     rm -f dotdeb.gpg && \
     apt-get update
 RUN apt-get install -y nginx
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN service nginx stop
