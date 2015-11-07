@@ -6,7 +6,7 @@ RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash -
 RUN apt-get install -y nodejs
 RUN npm update -g npm
-RUN npm install pm2@0.12.5 -g --unsafe-perm
+RUN npm install pm2 -g
 
 # install nginx
 RUN echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list && \
