@@ -19,3 +19,6 @@ RUN apt-get install -y nginx
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN service nginx stop
+
+# install a simple editor for easy debugging
+RUN apt-get install -y nano
